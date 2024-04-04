@@ -56,7 +56,7 @@ header {
 
 .nav_item.active a {
     color: #1d1d1d;
-    border-bottom: 3px solid #265073;
+    border-bottom: 3px solid rgb(38, 80, 115);
 }
 
 div.btn-conteiner {
@@ -152,7 +152,7 @@ div.btn-conteiner {
 }
 
 #cta .title span{
-    color: #4a7599;
+    color: rgb(74, 117, 153);
 }
 #cta .description{
     font-size: 1.2rem;
@@ -223,6 +223,13 @@ div.btn-conteiner {
     color: black;
     font-size: 45px;
 }
+.div-father{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    margin-top: 32px;
+}
 
 #psychologist {
     width:100%;
@@ -237,14 +244,15 @@ div.btn-conteiner {
     flex-direction: column;
     align-items: center;
     border-radius: 28px;
-    gap: 18px;
-    width: 25%;
+    width: 805;
+    gap:18px;
     padding: 20px;
     background-color: #d7e7b2;
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, .1);
     position: relative;
     overflow: hidden;
 }
+
 
 .psycho-brain {
     position: absolute;
@@ -295,3 +303,8 @@ div.btn-conteiner {
         width: 100%;
     }
 }
+
+.btn-link{
+    text-decoration: none;
+}
+
