@@ -119,11 +119,8 @@
 
                     <div class="psycho-price">
                         <h4>R$200,00</h4>
-                        <button class="btn-default">
-                            Ver mais...
-                        </button>   
+                        <button onclick="openPopup()" class="btn-default">Ver mais...</button>
                     </div>
-        
                 </div>
             </div>
 
@@ -150,9 +147,7 @@
 
                     <div class="psycho-price">
                         <h4>R$100,00</h4>
-                        <button class="btn-default">
-                            Ver mais...
-                        </button>   
+                        <button onclick="openPopup()" class="btn-default">Ver mais...</button>
                     </div>
         
                 </div>
@@ -184,9 +179,7 @@
 
                     <div class="psycho-price">
                         <h4>R$150,00</h4>
-                        <button class="btn-default">
-                            Ver mais...
-                        </button>   
+                        <button onclick="openPopup()" class="btn-default">Ver mais...</button>
                     </div>
         
                 </div>
@@ -218,9 +211,7 @@
 
                     <div class="psycho-price">
                         <h4>R$150,00</h4>
-                        <button class="btn-default">
-                            Ver mais...
-                        </button>   
+                        <button onclick="openPopup()" class="btn-default">Ver mais...</button>
                     </div>
         
                 </div>
@@ -300,8 +291,32 @@
     </footer>
     
     <script src="script.js"></script>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <!-- Conteúdo do popup -->
+        <h2 >Gutemberg França</h2>
+        <br>
+        <img src="1691438578258 (1).jpg" alt="" class="img-popup">
+       <br>
+        <p class="text-description">Oferecendo apoio empático e orientação
+            profissional para <br>ajudá-lo a enfrentar desafios e alcançar uma vida 
+            mais equilibrada</p>
+            <br>
+            <p>Horarios:</p>
+            <br>
+            <ul class="wl-abaixo">
+                <li>Segunda-feira</li>
+                <li>Terça-feira</li>
+                <li>Quarta-feira</li>
+                <li>Quinta-feira</li>
+                <li>Sexta-feira</li>
+            </ul>
+            <br>
+        <button onclick="closePopup()" class="btn-default" id="btn-btn">Fechar</button>
+    </div>
+    
 </body>
 </html>
-
 
 
