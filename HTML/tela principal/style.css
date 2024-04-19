@@ -295,6 +295,13 @@ div.btn-conteiner {
 }
 
 @media screen and (max-width: 1170px) {
+    .div-father{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    
     #psychologist{
         flex-wrap: wrap;
         justify-content: center;       
