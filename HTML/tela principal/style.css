@@ -237,7 +237,14 @@ div.btn-conteiner {
     justify-content: center;
     gap: 24px;
     margin-top: 32px;
+    transition: transform .5s ease;
 }
+
+
+#psychologist:hover {
+    transform: scale(1.05);
+}
+
 
 .psycho {
     display: flex;
