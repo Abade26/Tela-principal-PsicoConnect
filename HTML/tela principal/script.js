@@ -5,13 +5,25 @@ $(document).ready(function() {
     });
      
     const sections = $('section');
-    const navItms = $('.nav-item');
+    
 
     $(window).on('scroll', function() {
         const header = $('header');
         const scrollPosition = $(window).scrollTop() - header.outerHeight();
     });
 });
+
+function changeActive(clickedItem) {
+
+    const navItems = document.querySelectorAll('.nav_item')
+
+    navItems.forEach((item) => {
+        item.classList.remove('active')
+    })
+
+    clickedItem.classList.add('active')
+    
+}
 
 // Função para abrir o popup
 function openPopup() {
