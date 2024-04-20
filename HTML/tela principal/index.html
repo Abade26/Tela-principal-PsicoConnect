@@ -14,14 +14,14 @@
         <nav id="navbar">
             <i class="fa-solid fa-brain" id="nav_logo">PsiConnect</i>
 
-            <ul id="nav_list">
-                <li class="nav_item active">
+            <ul id="nav_list" class="nav">
+                <li class="nav_item active"  onclick="changeActive(this)">
                     <a href="#home">Início</a>
                 </li>
-                <li class="nav_item">
+                <li class="nav_item"  onclick="changeActive(this)">
                     <a href="#menu">Psicologos</a>
                 </li>
-                <li class="nav_item">
+                <li class="nav_item"  onclick="changeActive(this)">
                     <a href="#testimonials">Avaliações</a>
                 </li>
             </ul>
@@ -67,7 +67,6 @@
 
     <main id="content">
         <section id="home">
-            <div class="shape"></div>
             <div id="cta">
                 <h1 class="title">
                     Sua jornada para o bem-estar mental 
@@ -85,9 +84,10 @@
                     </a>
                 </div>
             </div>
-
+            
             <div id="banner">
                 <img src="Bipolar disorder-bro.svg" alt="banner">
+            
             </div>
         </section>
 
