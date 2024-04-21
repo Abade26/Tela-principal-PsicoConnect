@@ -55,8 +55,9 @@ for (let i = 0; i <= cards.length-1; i++){
         `
     })
 }
-
+/* */
 function modalOut(){
     modal.style.visibility = 'hidden'
     bgDark.style.visibility = 'hidden'
+    
 }
