@@ -10,19 +10,18 @@
     <title>Landing page</title>
 </head>
 <body>
-    <div id="bg-dark"></div>
     <header>
         <nav id="navbar">
-            <i class="fa-solid fa-brain" id="nav_logo">PsiConnect</i>
+            <i class="fa-solid fa-brain" id="nav_logo"><a href="#" class="logo_psico">PsiConnect</a></i>
 
-            <ul id="nav_list">
-                <li class="nav_item active">
+            <ul id="nav_list" class="nav">
+                <li class="nav_item active"  onclick="changeActive(this)">
                     <a href="#home">Início</a>
                 </li>
-                <li class="nav_item">
+                <li class="nav_item"  onclick="changeActive(this)">
                     <a href="#menu">Psicologos</a>
                 </li>
-                <li class="nav_item">
+                <li class="nav_item"  onclick="changeActive(this)">
                     <a href="#testimonials">Avaliações</a>
                 </li>
             </ul>
@@ -68,7 +67,6 @@
 
     <main id="content">
         <section id="home">
-            <div class="shape"></div>
             <div id="cta">
                 <h1 class="title">
                     Sua jornada para o bem-estar mental 
@@ -86,20 +84,18 @@
                     </a>
                 </div>
             </div>
-
+            
             <div id="banner">
                 <img src="Bipolar disorder-bro.svg" alt="banner">
+            
             </div>
         </section>
 
         <section id="menu">
-            <h2 class="section-title" >Psicologos</h2>
+            <h2 class="section-title" >Psicólogos</h2>
         <div class="div-father">
-
-            <div id="modal" class="psycho"></div>
-
             <div id="psychologist">
-                <div class="psycho card">
+                <div class="psycho">
                     <div class="psycho-brain">
                         <i class="fa-solid fa-brain" ></i>
                     </div>
@@ -108,7 +104,7 @@
                     <h3 class="psycho-title">
                         Gutemberg França
                     </h3>
-                    <span class="psycho-description">Ofrerecendo apoio empático e orientação
+                    <span class="psycho-description">Oferecendo apoio empático e orientação
                         profissional para <br>ajudá-lo a enfrentar desafios e alcançar uma vida 
                         mais equilibrada
                     </span>
@@ -117,21 +113,19 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
+                        
                         <span>(180+)</span>
                     </div>
 
                     <div class="psycho-price">
                         <h4>R$200,00</h4>
-                        <button class="btn-default">
-                            Ver mais...
-                        </button>   
+                        <button onclick="openPopup()" class="btn-default">Ver mais...</button>
                     </div>
-        
                 </div>
             </div>
 
             <div id="psychologist">
-                <div class="psycho card">
+                <div class="psycho">
                     <div class="psycho-brain">
                         <i class="fa-solid fa-brain" ></i>
                     </div>
@@ -140,7 +134,7 @@
                     <h3 class="psycho-title">
                         Gutemberg França
                     </h3>
-                    <span class="psycho-description">Ofrerecendo apoio empático e orientação
+                    <span class="psycho-description">Oferecendo apoio empático e orientação
                         profissional para <br>ajudá-lo a enfrentar desafios e alcançar uma vida 
                         mais equilibrada
                     </span>
@@ -153,16 +147,14 @@
 
                     <div class="psycho-price">
                         <h4>R$100,00</h4>
-                        <button class="btn-default">
-                            Ver mais...
-                        </button>   
+                        <button onclick="openPopup()" class="btn-default">Ver mais...</button>
                     </div>
         
                 </div>
             </div>
 
             <div id="psychologist">
-                <div class="psycho card">
+                <div class="psycho">
                     <div class="psycho-brain">
                         <i class="fa-solid fa-brain" ></i>
                     </div>
@@ -171,7 +163,7 @@
                     <h3 class="psycho-title">
                         Gutemberg França
                     </h3>
-                    <span class="psycho-description">Ofrerecendo apoio empático e orientação
+                    <span class="psycho-description">Oferecendo apoio empático e orientação
                         profissional para <br>ajudá-lo a enfrentar desafios e alcançar uma vida 
                         mais equilibrada
                     </span>
@@ -187,16 +179,14 @@
 
                     <div class="psycho-price">
                         <h4>R$150,00</h4>
-                        <button class="btn-default">
-                            Ver mais...
-                        </button>   
+                        <button onclick="openPopup()" class="btn-default">Ver mais...</button>
                     </div>
         
                 </div>
             </div>
 
             <div id="psychologist">
-                <div class="psycho card">
+                <div class="psycho">
                     <div class="psycho-brain">
                         <i class="fa-solid fa-brain" ></i>
                     </div>
@@ -205,7 +195,7 @@
                     <h3 class="psycho-title">
                         Gutemberg França
                     </h3>
-                    <span class="psycho-description">Ofrerecendo apoio empático e orientação
+                    <span class="psycho-description">Oferecendo apoio empático e orientação
                         profissional para <br>ajudá-lo a enfrentar desafios e alcançar uma vida 
                         mais equilibrada
                     </span>
@@ -215,14 +205,13 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
                         <span>(65+)</span>
                     </div>
 
                     <div class="psycho-price">
                         <h4>R$150,00</h4>
-                        <button class="btn-default">
-                            Ver mais...
-                        </button>   
+                        <button onclick="openPopup()" class="btn-default">Ver mais...</button>
                     </div>
         
                 </div>
@@ -302,8 +291,32 @@
     </footer>
     
     <script src="script.js"></script>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <!-- Conteúdo do popup -->
+        <h2 >Gutemberg França</h2>
+        <br>
+        <img src="1691438578258 (1).jpg" alt="" class="img-popup">
+       <br>
+        <p class="text-description">Oferecendo apoio empático e orientação
+            profissional para <br>ajudá-lo a enfrentar desafios e alcançar uma vida 
+            mais equilibrada</p>
+            <br>
+            <p>Horarios:</p>
+            
+            <ul class="wl-abaixo">
+                <li>Segunda-feira</li>
+                <li>Terça-feira</li>
+                <li>Quarta-feira</li>
+                <li>Quinta-feira</li>
+                <li>Sexta-feira</li>
+            </ul>
+            <br>
+        <button onclick="closePopup()" class="btn-default" id="btn-btn">Fechar</button>
+    </div>
+    
 </body>
 </html>
-
 
 
