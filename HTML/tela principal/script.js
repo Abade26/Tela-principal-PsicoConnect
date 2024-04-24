@@ -16,6 +16,18 @@ $(document).ready(function() {
 const bgDark = document.getElementById('bg-dark')
 const modal = document.getElementById('modal')
 
+function changeActive(clickedItem) {
+
+    const navItems = document.querySelectorAll('.nav_item')
+
+    navItems.forEach((item) => {
+        item.classList.remove('active')
+    })
+
+    clickedItem.classList.add('active')
+    
+}
+
 let cards = document.querySelectorAll('.card')
 for (let i = 0; i <= cards.length-1; i++){
     let button = document.querySelectorAll('.card .btn-default')[i]
