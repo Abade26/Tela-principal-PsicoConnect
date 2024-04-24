@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');*/
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
 }
 
 
@@ -300,6 +301,9 @@ div.btn-conteiner {
 
 .psycho-image{
     border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 
 #modal{
