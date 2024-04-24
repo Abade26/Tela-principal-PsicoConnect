@@ -5,7 +5,7 @@ $(document).ready(function() {
     });
      
     const sections = $('section');
-    
+    const navItms = $('.nav-item');
 
     $(window).on('scroll', function() {
         const header = $('header');
@@ -13,26 +13,51 @@ $(document).ready(function() {
     });
 });
 
-function changeActive(clickedItem) {
+const bgDark = document.getElementById('bg-dark')
+const modal = document.getElementById('modal')
 
-    const navItems = document.querySelectorAll('.nav_item')
+let cards = document.querySelectorAll('.card')
+for (let i = 0; i <= cards.length-1; i++){
+    let button = document.querySelectorAll('.card .btn-default')[i]
+    button.addEventListener('click', () =>{
+        bgDark.style.visibility = 'visible'
+        modal.style.visibility = 'visible'
 
-    navItems.forEach((item) => {
-        item.classList.remove('active')
+        let img = document.querySelectorAll('.card .psycho-image')[i]
+        let name = document.querySelectorAll('.card h3')[i]
+        let description = document.querySelectorAll('.card .psycho-description')[i]
+        let rate = document.querySelectorAll('.card .psycho-rate')[i]
+        let price = document.querySelectorAll('.card .psycho-price h4')[i]
+
+        modal.innerHTML = `
+            <div class="psycho-brain">
+                <i class="fa-solid fa-brain" ></i>
+            </div>
+        
+            <img src="${img.src}" class="psycho-image" alt="berg">
+            <h3 class="psycho-title">
+                ${name.innerText}
+            </h3>
+            <span class="psycho-description">
+                ${description.innerHTML}
+            </span>
+
+            <div class="psycho-rate">
+                ${rate.innerHTML}
+            </div>
+
+            <div class="psycho-price">
+                <h4>${price.innerText}</h4>
+                <button class="btn-default" onclick="modalOut()">
+                    Cancelar
+                </button>   
+            </div>
+        `
     })
-
-    clickedItem.classList.add('active')
+}
+/* */
+function modalOut(){
+    modal.style.visibility = 'hidden'
+    bgDark.style.visibility = 'hidden'
     
-}
-
-// Função para abrir o popup
-function openPopup() {
-    var popup = document.getElementById('popup');
-    popup.style.display = 'block';
-}
-
-// Função para fechar o popup
-function closePopup() {
-    var popup = document.getElementById('popup');
-    popup.style.display = 'none';
 }
