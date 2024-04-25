@@ -45,6 +45,12 @@ header {
     color: #265073;
 }
 
+#nav_logo a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #265073;
+}
+
 
 #nav_list {
     display: flex;
