@@ -470,3 +470,12 @@ footer {
         gap: 20px;
     }
 }
+
+/* Adicione isso ao seu arquivo style.css */
+#nav_list li ul {
+    display: none;
+}
+
+#nav_list li ul.mostrar {
+    display: block;
+}

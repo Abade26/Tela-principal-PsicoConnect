@@ -74,3 +74,8 @@ function modalOut(){
     bgDark.style.visibility = 'hidden'
     
 }
+
+function toggleEspecialidades() {
+    var especialidadesList = document.getElementById('especialidades_list');
+    especialidadesList.classList.toggle('mostrar');
+}
