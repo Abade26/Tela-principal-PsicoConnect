@@ -276,6 +276,65 @@ div.btn-conteiner {
     overflow: hidden;
 }
 
+#especialidades_list {
+    position: absolute;
+    top: 92px;
+    background-color: #CD853F;
+    padding: 25px;
+    border-radius: 5%;
+    border-top: 5px solid #d7e7b2;
+    z-index: 1;
+    
+    ul li {
+
+        a {
+            color: rgba(29, 29, 29, 0.68);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #000;
+        }
+    }
+}
+
+.psycho:hover #especialidades_list {
+    display: block;
+}
+
+.psycho:hover .psycho-brain {
+    background-color: #a9b887;
+        
+        
+    }
+
+
+.escondido#especialidades_list {
+    z-index: 0;
+    display: none;
+}
+
+
+#especialidades_list li {
+    list-style: none;
+    color: white;
+}
+
+.psycho-name{
+    font-size: 1.563rem;
+    color: #1d1d1d;
+}
+
+.psycho-name span{
+    color: #434343;
+}
+
+.psycho-rate{
+    display: flex;
+}
+    
+
+
 .psycho-brain {
     position: absolute;
     background-color: #a9b887;
