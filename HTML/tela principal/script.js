@@ -76,6 +76,10 @@ function modalOut(){
 }
 
 function toggleEspecialidades() {
-    var especialidadesList = document.getElementById('especialidades_list');
-    especialidadesList.classList.toggle('mostrar');
+        var elemento = document.getElementById('especialidades_list');
+        if (elemento.classList.contains('escondido')) {
+          elemento.classList.remove('escondido');
+        } else {
+          elemento.classList.add('escondido');
+        }
 }
