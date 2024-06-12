@@ -106,7 +106,8 @@ body {
 
 .input-box input,
 .input-box select {
-    margin: 0.6rem;
+    width: 100%; 
+    margin: 0.6rem 0; 
     padding: 0.8rem;
     border: none;
     border-radius: 10px;
