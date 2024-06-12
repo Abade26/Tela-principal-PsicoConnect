@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-img">
+            <img src="css-cadastro/Login.gif" alt="Imagem animada">
+        </div>
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="#">Paciente</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Primeiro nome</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastname">Sobrenome</label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="CPF">CPF</label>
+                        <input id="CPF" type="text" name="CPF" placeholder="___-___-___-__" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="CRM">CRM</label>
+                        <input id="CRM" type="text" name="CRM" placeholder="__/______" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="estado">Estado</label>
+                        <select id="estado" name="estado" required>
+                            <option value="">Selecione o estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxxx-xxxx" required>
+                    </div>
+                    
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+                   
+                    <div class="input-box">
+                        <label for="Confirmpassword">Confirme sua senha</label>
+                        <input id="Confirmpassword" type="password" name="Confirmpassword" placeholder="Confirme sua senha" required>
+                    </div>
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Gênero</h6>
+                    </div>
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input type="radio" id="female" name="gender">
+                            <label for="female">Feminino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input type="radio" id="male" name="gender">
+                            <label for="male">Masculino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input type="radio" id="other" name="gender">
+                            <label for="other">Outros</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input type="radio" id="other" name="gender">
+                            <label for="other">Prefiro não falar</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button type="submit"><a href="http://127.0.0.1:5500/HTML/tela%20de%20login/teste-tela-login.html">Continuar</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
