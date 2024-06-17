@@ -1,4 +1,4 @@
-import { db, set, ref } from "./configFirebase";
+import { db, set, ref } from "../script/configFirebase.js";
 
 let name = prompt("Qual seu nome?");
 let email = prompt("Qual seu e-mail?");
