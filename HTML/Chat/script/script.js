@@ -1,10 +1,13 @@
 import { db, set, ref } from "../script/configFirebase.js";
 
-let name = prompt("Qual seu nome?");
-let email = prompt("Qual seu e-mail?");
+let name = window.localStorage.getItem("name");
+let email = window.localStorage.getItem("email");
 
-if (name && email) {
-  console.log(name, email);
+if (!name && !email) {
+  name = prompt("Qual seu nome?");
+  email = prompt("Qual seu e-mail?");
+  window.localStorage.setItem("name", name);
+  windows.localStorage.setItem("email", email);
 }
 
 function sendMessage(event) {
