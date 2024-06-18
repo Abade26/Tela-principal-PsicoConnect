@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Psicólogo</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <img id="profile-picture" src="default-profile-pic.jpg" alt="Foto de Perfil">
+            <div class="button-container">
+                <button id="change-picture-btn">Mudar Foto</button>
+                <button id="edit-picture-btn">Alterar Foto de Perfil</button>
+            </div>
+            <h1>Nome do Psicólogo</h1>
+            <p>Especialização</p>
+        </div>
+    </header>
+
+    <section id="consultation-hours">
+        <h2>Horários de Consulta</h2>
+        <ul id="consultation-list">
+            <!-- Horários de consulta serão inseridos aqui dinamicamente -->
+        </ul>
+    </section>
+
+    <section id="user-profiles">
+        <h2>Perfil dos Usuários</h2>
+        <div class="user-card">
+            <!-- Exemplo de card de perfil de usuário -->
+            <img src="user1.jpg" alt="Foto do Usuário">
+            <h3>Nome do Usuário</h3>
+            <p>Informações adicionais</p>
+        </div>
+        <!-- Outros cards de usuário serão inseridos aqui dinamicamente -->
+    </section>
+
+    <section id="patient-scores">
+        <h2>Pontuações dos Pacientes</h2>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pesquisar no Pontuário">
+            <button id="search-btn">Pesquisar</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Paciente</th>
+                    <th>Pontuação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="patient-list">
+                <!-- Dados dos pacientes serão inseridos aqui dinamicamente -->
+            </tbody>
+        </table>
+    </section>
+
+   
+    <input type="file" id="file-input" style="display: none;">
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
