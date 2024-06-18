@@ -1,7 +1,10 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-import { getDatabase ,set, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
- 
+import { getDatabase, set, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyCyM4t2c5GLVJ4MR1SCgIbi-HCtwyEQNqI",
     authDomain: "psiconnect-app.firebaseapp.com",
@@ -15,5 +18,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+const auth = getAuth(app);
 
-export { db, set, ref, push, onChildAdded };
+export { db, set, ref, push, onChildAdded, createUserWithEmailAndPassword, auth, signInWithEmailAndPassword };
