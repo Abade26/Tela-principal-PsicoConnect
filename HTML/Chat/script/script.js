@@ -29,7 +29,7 @@ if (!userId) {
 if (email === "atendimento@gmail.com") {
   loadListClients();
 } else {
-  loadMessage(userId);
+  loadMessages();
   setUser(name, email);
 }
 
@@ -37,7 +37,7 @@ function sendMessage(event) {
   event.preventDefault();
   const inputField = document.getElementById("user-input");
   const id = currentId ? currentId : userId;
-  const refMessage = ref(db, "messages/" + id);
+  const refMessage = ref(db, "messages/");
   const newMessage = push(refMessage);
   const time = getCurrentTime();
 
@@ -46,6 +46,7 @@ function sendMessage(event) {
     email: email,
     message: inputField.value,
     time: time,
+    uid: id,
   });
 
   inputField.value = "";
@@ -64,7 +65,7 @@ async function login(email, password) {
     if (res.user.email === "atendimento@gmail.com") {
       loadListClients();
     } else {
-      loadMessage(res.user.uid);
+      loadMessages();
       setUser(name, email);
     }
   } catch (error) {
@@ -93,16 +94,17 @@ function loadListClients() {
     listItem.addEventListener("click", () => {
       currentId = snapshot.val().uid;
       setUser(snapshot.val().name, snapshot.val().email);
-      loadMessage(snapshot.val().uid);
+      loadMessages();
     });
     clientListElement.appendChild(listItem);
   });
 }
+
 async function createUser(email, password) {
   name = prompt("Qual seu nome?");
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
-    updateProfile(auth.currentUser, {
+    await updateProfile(auth.currentUser, {
       displayName: name,
     });
     window.localStorage.setItem("userId", res.user.uid);
@@ -113,7 +115,7 @@ async function createUser(email, password) {
 
     const newMessage = push(refUser);
 
-    loadMessage(res.user.uid);
+    loadMessages();
     setUser(name, email);
 
     set(newMessage, {
@@ -126,35 +128,34 @@ async function createUser(email, password) {
   }
 }
 
-function loadMessage(uid) {
+function loadMessages() {
   const messageDiv = document.getElementById("messages");
   messageDiv.innerText = "";
-  const refMessageLoad = ref(db, "messages/" + uid);
+  const refMessageLoad = ref(db, "messages/");
   onChildAdded(refMessageLoad, (snapshot) => {
     const message = snapshot.val();
-    const messageDiv = document.createElement("div");
-
+    const messageContainer = document.createElement("div");
     const messageText = document.createElement("p");
     const messageTime = document.createElement("span");
 
-    if (message.email === email) {
-      messageDiv.classList.add("self");
+    if (message.uid === userId) {
+      messageContainer.classList.add("self");
       messageText.innerText = `${message.message}`;
       messageTime.innerText = `${message.time}`;
       messageText.appendChild(messageTime);
     } else {
-      messageDiv.classList.add("other");
+      messageContainer.classList.add("other");
       messageText.innerText = `${message.message}`;
       messageTime.innerText = `${message.time}`;
       messageText.appendChild(messageTime);
     }
-    messageDiv.appendChild(messageText);
+    messageContainer.appendChild(messageText);
 
     const messagesContainer = document.getElementById("messages");
     const messageContainer2 = document.getElementById("messagesContainer");
 
     if (messagesContainer) {
-      messagesContainer.appendChild(messageDiv);
+      messagesContainer.appendChild(messageContainer);
     }
     if (messageContainer2) {
       messageContainer2.scrollTop = messagesContainer.scrollHeight;
