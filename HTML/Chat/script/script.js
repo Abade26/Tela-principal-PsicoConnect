@@ -143,7 +143,6 @@ function loadMessage(uid) {
       messageTime.innerText = `${message.time}`;
       messageText.appendChild(messageTime);
     } else {
-      // Se a mensagem for de outro usuário
       messageDiv.classList.add("other");
       messageText.innerText = `${message.message}`;
       messageTime.innerText = `${message.time}`;
@@ -153,8 +152,13 @@ function loadMessage(uid) {
 
     const messagesContainer = document.getElementById("messages");
     const messageContainer2 = document.getElementById("messagesContainer");
-    messagesContainer.appendChild(messageDiv);
-    messageContainer2.scrollTop = messagesContainer.scrollHeight;
+
+    if (messagesContainer) {
+      messagesContainer.appendChild(messageDiv);
+    }
+    if (messageContainer2) {
+      messageContainer2.scrollTop = messagesContainer.scrollHeight;
+    }
   });
 }
 
@@ -163,7 +167,6 @@ function getCurrentTime() {
   let hours = date.getHours();
   let minutes = date.getMinutes();
 
-  // Adiciona um zero à esquerda se as horas ou minutos forem de um dígito.
   hours = hours < 10 ? "0" + hours : hours;
   minutes = minutes < 10 ? "0" + minutes : minutes;
 
