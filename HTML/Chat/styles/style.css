@@ -52,7 +52,7 @@
   }
   .sidebar .button-change-user {
     border-radius: 50px;
-    background: #1c76b4;
+    background: #77B0AA;
     color: white;
     width: 50%;
     height: 50px;
@@ -69,7 +69,7 @@
   }
   .chat-box .user-header {
     height: 300px;
-    background-color: #55b3f3;
+    background-color: #77B0AA;
     border-radius: 25px 25px 0px 0px;
     height: 105px;
     display: flex;
@@ -88,7 +88,7 @@
   }
   .messagesContainer {
     min-height: 60vh;
-    background: rgba(32, 33, 35, 0.1);
+    background: #f1fada;
     overflow-y: auto;
     max-height: 60vh;
     border-bottom: 1px solid #ccc;
@@ -150,14 +150,14 @@
   
   .chat-box form {
     min-height: 10vh;
-    background: rgba(32, 33, 35, 0.1);
+    background: #f1fada;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .container-input {
     border-radius: 50px;
-    background: rgba(32, 33, 35, 0.5);
+    background: #77B0AA;
     width: 80%;
     color: white;
     border: none;
