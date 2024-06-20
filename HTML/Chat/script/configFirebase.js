@@ -15,6 +15,7 @@ import {
   updateProfile,
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
 const firebaseConfig = {
     apiKey: "AIzaSyCyM4t2c5GLVJ4MR1SCgIbi-HCtwyEQNqI",
     authDomain: "psiconnect-app.firebaseapp.com",
