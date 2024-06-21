@@ -8,14 +8,15 @@ import {
   auth, 
   signInWithEmailAndPassword, 
   updateProfile,
+  signOut,
 } from "../script/configFirebase.js";
 
-// Inicializa as variáveis de usuário a partir do localStorage
 let userId = window.localStorage.getItem("userId");
 let name = window.localStorage.getItem("name");
 let email = window.localStorage.getItem("email");
+const refMessage = ref(db, "messages/"); 
+const refUser = ref(db, "user/"); 
 
-// Função principal para gerenciar o login e o armazenamento de usuário
 if (!userId) {
   email = prompt("Qual seu e-mail?");
   const password = prompt("Digite seu password?");
@@ -23,10 +24,10 @@ if (!userId) {
     login(email, password);
   }
 }
+if(email === "adm@gmail.com"){
+  loadListClient();
+}
 
-const refMessage = ref(db, "messages/"); 
-
-// Função para enviar mensagem
 function sendMessage(event) {
   event.preventDefault();
   const inputField = document.getElementById('user-input');
@@ -41,16 +42,20 @@ function sendMessage(event) {
   inputField.value = "";
 }
 
-// Função de login
+
 async function login(email, password) {
   try {
     const res =  await signInWithEmailAndPassword(auth, email, password);
-    userId = res.user.uid; // Atualiza userId
+    userId = res.user.uid; 
     email = res.user.email;
-    name = res.user.displayName; // Atualiza name
+    name = res.user.displayName; 
     window.localStorage.setItem("userId", userId);
     window.localStorage.setItem("email", email);
     window.localStorage.setItem("name", name);
+
+    if(res.user.email === 'adm@gmail.com'){
+        loadListClient();
+    }
   } catch (error) {
     const errorCode = error.code;
 
@@ -62,26 +67,46 @@ async function login(email, password) {
   }
 }
 
-// Função para criar novo usuário
+function loadListClient(){
+    const clientListElement = document.getElementById("client-list");
+    const containerList = document.getElementById("text-client");
+    clientListElement.innerHTML = "";
+    containerList.innerHTML = "";
+    const headerClients =  document.createElement("h3");
+    headerClients.innerHTML = "Lista de Clientes";
+    
+    containerList.appendChild(headerClients);
+    onChildAdded(refUser, (snapshot) => {
+      const listItem = document.createElement("button");
+      listItem.innerText = snapshot.val().name;     
+      clientListElement.appendChild(listItem);
+    });
+}
 async function createUser(email, password) {
   name = prompt("Qual seu nome?");
   try {
     const res =  await createUserWithEmailAndPassword(auth, email, password);
-    userId = res.user.uid; // Atualiza userId
+    userId = res.user.uid; 
     email = res.user.email;
     await updateProfile(auth.currentUser, {
       displayName: name,
     });
-    name = res.user.displayName; // Atualiza name
+    name = res.user.displayName; 
     window.localStorage.setItem("userId", userId);
     window.localStorage.setItem("email", email);
     window.localStorage.setItem("name", name);
+    const refUser = ref(db, "user/"); 
+    const newMessage = push(refUser);
+    set(newMessage, {
+      name: name,
+      email: email,
+      uid: res.user.uid,
+    });
   } catch (error) {
     alert("Houve um erro ao criar a conta");
   }
 }
 
-// Função para carregar mensagens
 function loadMessage() {
   const messageDiv  = document.getElementById("messages");
 
@@ -94,8 +119,19 @@ function loadMessage() {
   });
 }
 
-// Inicializa a função para carregar mensagens
 loadMessage();
 
-// Torna a função sendMessage acessível globalmente
+async function logout(){
+    try {
+      await signOut(auth);
+      window.localStorage.removeItem("userId");
+      window.localStorage.removeItem("name");
+      window.localStorage.removeItem("email");
+      location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+}
+
 window.sendMessage = sendMessage;
+window.logout = logout;
