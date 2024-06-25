@@ -12,7 +12,7 @@
     <script src="" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <title>Landing page</title>
+    <title>Psiconnect</title>
 </head>
 <body>
     <div id="bg-dark"></div>
@@ -26,6 +26,12 @@
             <ul id="nav_list" class="nav">
                 <li class="nav_item active" onclick="changeActive(this)">
                     <a href="#home">Início</a>
+                </li>
+                <li class="nav_item chat" onclick="changeActive(this)">
+                    <a href="#chat">Chat</a>
+                </li>
+                <li class="nav_item prontuario" onclick="changeActive(this)">
+                    <a href="#prontuario">Prontuario</a>
                 </li>
                 <li class="nav_item" onclick="changeActive(this)">
                     <a href="#menu">Psicólogos</a>
@@ -115,6 +121,12 @@
                     <a href="#home">Início</a>
                 </li>
                 <li class="nav_item">
+                    <a href="#Chat">Chat</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#prontuario">Prontuario</a>
+                </li>
+                <li class="nav_item">
                     <a href="#menu">Psicólogos</a>
                 </li>
                 <li class="nav_item">
@@ -141,11 +153,6 @@
                     profissional e soluções personalizadas para o seu bem-estar emocional."
                 </p>
 
-                <div id="cta_buttons">
-                    <a href="#" class="btn-default">
-                        Ver mais...
-                    </a>
-                </div>
             </div>
             
             <div id="banner">
@@ -170,9 +177,9 @@
                     <h3 class="psycho-title">
                         Gutemberg França
                     </h3>
-                    <span class="psycho-description">Oferecendo apoio empático e orientação
-                        profissional para <br>ajudá-lo a enfrentar desafios e alcançar uma vida 
-                        mais equilibrada
+                    <span class="psycho-description">Especializado em ansiedade e depressão, <br>
+                        Dr. Gutemberg França combina técnicas cognitivo-comportamentais <br> e abordagens 
+                        humanistas para criar um ambiente acolhedor e terapêutico.
                     </span>
 
                     <div class="psycho-rate">
@@ -185,7 +192,7 @@
                     <div class="psycho-price">
                         <h4>R$200,00</h4>
                         <button class="btn-default">
-                            Ver mais...
+                            Chat
                         </button>   
                     </div>
         
@@ -202,9 +209,9 @@
                     <h3 class="psycho-title">
                         Caio Viterbo
                     </h3>
-                    <span class="psycho-description">adarbiliuqe siam adiv amu raçnacla e soifased 
-                        ratnerfne a ol-áduja <br>
-                        arap lanoissiforp oãçatneiro e ocitápm oiopa odnecerefO
+                    <span class="psycho-description">Especialista em terapia familiar e de casal, 
+                        Dr. Caio Viterbo utiliza uma abordagem colaborativa <br> e orientada para soluções, 
+                        focada em fortalecer relacionamentos.
                     </span>
 
                     <div class="psycho-rate">
@@ -216,7 +223,7 @@
                     <div class="psycho-price">
                         <h4>R$100,00</h4>
                         <button class="btn-default">
-                            Ver mais...
+                            Chat
                         </button>   
                     </div>
         
@@ -233,9 +240,9 @@
                     <h3 class="psycho-title">
                         Falvio Gustavo
                     </h3>
-                    <span class="psycho-description">Oferecendo apoio empático e orientação
-                        profissional para <br>ajudá-lo a enfrentar desafios e alcançar uma vida 
-                        mais equilibrada
+                    <span class="psycho-description">Com formação em EMDR, 
+                        Dr. Flavio Gustavo Costa é  especializado no tratamento <br> de traumas e TEPT, 
+                        oferecendo uma abordagem empática e eficaz para a cura emocional.
                     </span>
 
                     <div class="psycho-rate">
@@ -250,7 +257,7 @@
                     <div class="psycho-price">
                         <h4>R$150,00</h4>
                         <button class="btn-default">
-                            Ver mais...
+                            Chat
                         </button>   
                     </div>
         
@@ -265,7 +272,7 @@
                     
                     <img src="imagens/IMG_20221207_212045.jpg" class="psycho-image" alt="berg">
                     <h3 class="psycho-title">
-                        Jean Foneca
+                        Jean Santos
                     </h3>
                     <span class="psycho-description">Oferecendo apoio empático e orientação
                         profissional para <br>ajudá-lo a enfrentar desafios e alcançar uma vida 
@@ -283,13 +290,149 @@
                     <div class="psycho-price">
                         <h4>R$150,00</h4>
                         <button class="btn-default">
-                            Ver mais...
+                            Chat
                         </button>   
                     </div>
         
                 </div>
             </div>
+            
         </div>    
+        <div class="div-father">
+
+            <div id="modal" class="psycho"></div>
+
+            <div id="psychologist">
+                <div class="psycho card">
+                    <div class="psycho-brain">
+                        <i class="fa-solid fa-brain" ></i>
+                    </div>
+                    
+                    <img src="imagens/1691438578258 (1).jpg" class="psycho-image" alt="berg">
+                    <h3 class="psycho-title">
+                        Gutemberg França
+                    </h3>
+                    <span class="psycho-description">Especializado em ansiedade e depressão, <br>
+                        Dr. Gutemberg França combina técnicas cognitivo-comportamentais <br> e abordagens 
+                        humanistas para criar um ambiente acolhedor e terapêutico.
+                    </span>
+
+                    <div class="psycho-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(180+)</span>
+                    </div>
+
+                    <div class="psycho-price">
+                        <h4>R$200,00</h4>
+                        <button class="btn-default">
+                            Chat
+                        </button>   
+                    </div>
+        
+                </div>
+            </div>
+
+            <div id="psychologist">
+                <div class="psycho card">
+                    <div class="psycho-brain">
+                        <i class="fa-solid fa-brain" ></i>
+                    </div>
+                    
+                    <img src="imagens/caio3.jpeg" class="psycho-image" alt="berg">
+                    <h3 class="psycho-title">
+                        Caio Viterbo
+                    </h3>
+                    <span class="psycho-description">Especialista em terapia familiar e de casal, 
+                        Dr. Caio Viterbo utiliza uma abordagem colaborativa <br> e orientada para soluções, 
+                        focada em fortalecer relacionamentos.
+                    </span>
+
+                    <div class="psycho-rate">
+                        <i class="fa-solid fa-star"></i>
+                        
+                        <span>(65+)</span>
+                    </div>
+
+                    <div class="psycho-price">
+                        <h4>R$100,00</h4>
+                        <button class="btn-default">
+                            Chat
+                        </button>   
+                    </div>
+        
+                </div>
+            </div>
+
+            <div id="psychologist">
+                <div class="psycho card">
+                    <div class="psycho-brain">
+                        <i class="fa-solid fa-brain" ></i>
+                    </div>
+                    
+                    <img src="imagens/fvls.png" class="psycho-image" alt="berg">
+                    <h3 class="psycho-title">
+                        Falvio Gustavo
+                    </h3>
+                    <span class="psycho-description">Com formação em EMDR, 
+                        Dr. Flavio Gustavo Costa é  especializado no tratamento <br> de traumas e TEPT, 
+                        oferecendo uma abordagem empática e eficaz para a cura emocional.
+                    </span>
+
+                    <div class="psycho-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(65+)</span>
+                    </div>
+
+                    <div class="psycho-price">
+                        <h4>R$150,00</h4>
+                        <button class="btn-default">
+                            Chat
+                        </button>   
+                    </div>
+        
+                </div>
+            </div>
+
+            <div id="psychologist">
+                <div class="psycho card">
+                    <div class="psycho-brain">
+                        <i class="fa-solid fa-brain" ></i>
+                    </div>
+                    
+                    <img src="imagens/IMG_20221207_212045.jpg" class="psycho-image" alt="berg">
+                    <h3 class="psycho-title">
+                        Jean Santos
+                    </h3>
+                    <span class="psycho-description">Oferecendo apoio empático e orientação
+                        profissional para <br>ajudá-lo a enfrentar desafios e alcançar uma vida 
+                        mais equilibrada
+                    </span>
+
+                    <div class="psycho-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(65+)</span>
+                    </div>
+
+                    <div class="psycho-price">
+                        <h4>R$150,00</h4>
+                        <button class="btn-default">
+                            Chat
+                        </button>   
+                    </div>
+        
+                </div>
+            </div>
+            
+        </div>   
            
         <section id="testimonials">
             <img src="imagens/Online Review.gif" id="testimonial_ava" alt="">
@@ -308,7 +451,7 @@
 
                         <div class="feedback-content">
                             <p>
-                                <b>Jeanzinho</b>
+                                <b>Jean Santos</b>
                                 <span>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -318,8 +461,10 @@
                                 </span>
                             </p>
                             <p>
-                                "O Psyconnect me ajudou a entender melhor a mim mesmo 
-                                e encontrar recursos úteis para o meu bem-estar mental."
+                                Minha experiência com o chat de psicólogos foi excelente. 
+                                O site é intuitivo e fácil de usar, 
+                                o que facilitou muito o processo de encontrar um profissional 
+                                adequado às minhas necessidades.
                             </p>
                         </div>
                     </div>
@@ -339,8 +484,9 @@
                                 </span>
                             </p>
                             <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
+                                Utilizei o serviço de chat de psicólogos e fiquei muito satisfeito com a experiência. 
+                                O processo de registro foi simples e rápido, 
+                                e em poucos minutos eu já estava conectado com um profissional qualificado. 
                             </p>
                         </div>
                     </div>

@@ -143,7 +143,6 @@ function loadMessage(uid) {
       messageTime.innerText = `${message.time}`;
       messageText.appendChild(messageTime);
     } else {
-      // Se a mensagem for de outro usuário
       messageDiv.classList.add("other");
       messageText.innerText = `${message.message}`;
       messageTime.innerText = `${message.time}`;
@@ -163,7 +162,6 @@ function getCurrentTime() {
   let hours = date.getHours();
   let minutes = date.getMinutes();
 
-  // Adiciona um zero à esquerda se as horas ou minutos forem de um dígito.
   hours = hours < 10 ? "0" + hours : hours;
   minutes = minutes < 10 ? "0" + minutes : minutes;
 
