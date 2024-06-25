@@ -30,16 +30,16 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
   const auth = getAuth(app);
-  
-  export {
-    db,
-    set,
-    ref,
-    push,
-    onChildAdded,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    updateProfile,
-    auth,
-    signOut,
-  };
+
+export {
+  db,
+  set,
+  ref,
+  push,
+  onChildAdded,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+  auth,
+  signOut,
+};
