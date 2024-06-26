@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usário</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <img id="profile-picture" src="default-profile-pic.jpg" alt="Foto de Perfil">
+            <div class="button-container">
+                <button id="change-picture-btn">Mudar Foto</button>
+                <button id="edit-picture-btn">Alterar Foto de Perfil</button>
+            </div>
+            <h1>Nome do Usário</h1>
+            <p>Nome Usário</p>
+        </div>
+    </header>
+
+    <section id="consultation-hours">
+        <h2>Minhas Consultas</h2>
+        <ul id="consultation-list">
+        </ul>
+        <button id="add-consultation-btn">Adicionar Horário</button>
+    </section>
+
+    <section id="user-profiles">
+        <h2>Meu Psicólogo</h2>
+        <div class="user-card">
+            <img src="khris.jpg" alt="Foto do Usuário">
+            <h3>Khristhyan Henrique</h3>
+            <p>Estou lhe aguardando para a consulta 🤗!</p>
+        </div>
+       
+        
+    </section>
+
+    <section id="patient-scores">
+        <h2>Minhas Avaliações</h2>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pesquisar no Pontuário">
+            <button id="search-btn">Pesquisar</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Paciente</th>
+                    <th>Minha Pontuação</th>
+                    <th>Data da Avaliação</th> <!-- Nova coluna para a data -->
+                </tr>
+            </thead>
+            <tbody id="patient-list">
+                <!-- Linhas de pacientes serão adicionadas dinamicamente via JavaScript -->
+            </tbody>
+        </table>
+    </section>
+    
+
+    <input type="file" id="file-input" style="display: none;">
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

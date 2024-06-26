@@ -23,6 +23,34 @@ fileInput.addEventListener('change', function() {
     }
 });
 
+// Adicionar Imagens PNG no Perfil dos Usuários
+const addUserImageBtn = document.getElementById('add-user-image-btn');
+const userProfiles = document.getElementById('user-profiles');
+
+addUserImageBtn.addEventListener('click', function() {
+    const newUserCard = document.createElement('div');
+    newUserCard.classList.add('user-card');
+    newUserCard.innerHTML = `
+        <img src="default-user-pic.png" alt="Foto do Usuário">
+        <h3>Novo Usuário</h3>
+        <p>Informações adicionais</p>
+        <input type="file" class="user-image-input" accept=".png">
+    `;
+    userProfiles.appendChild(newUserCard);
+
+    const imageInput = newUserCard.querySelector('.user-image-input');
+    imageInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                newUserCard.querySelector('img').src = reader.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
 // Barra de Pesquisa para Pontuações dos Pacientes
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
@@ -50,6 +78,7 @@ addPatientBtn.addEventListener('click', function() {
     newRow.innerHTML = `
         <td><input type="text" placeholder="Nome do Paciente"></td>
         <td><input type="number" placeholder="Pontuação"></td>
+        <td><input type="date" placeholder="Data da Avaliação"></td>
         <td>
             <button class="save-btn">Salvar</button>
             <button class="delete-btn">Excluir</button>
@@ -62,6 +91,7 @@ addPatientBtn.addEventListener('click', function() {
         newRow.innerHTML = `
             <td>${inputs[0].value}</td>
             <td>${inputs[1].value}</td>
+            <td>${inputs[2].value}</td>
             <td>
                 <button class="edit-btn">Editar</button>
                 <button class="delete-btn">Excluir</button>
@@ -80,10 +110,12 @@ function addEditAndDeleteEvents(row) {
         const cells = row.querySelectorAll('td');
         const name = cells[0].innerText;
         const score = cells[1].innerText;
+        const date = cells[2].innerText;
 
         row.innerHTML = `
             <td><input type="text" value="${name}"></td>
             <td><input type="number" value="${score}"></td>
+            <td><input type="date" value="${date}"></td>
             <td>
                 <button class="save-btn">Salvar</button>
                 <button class="delete-btn">Excluir</button>
@@ -95,6 +127,7 @@ function addEditAndDeleteEvents(row) {
             row.innerHTML = `
                 <td>${inputs[0].value}</td>
                 <td>${inputs[1].value}</td>
+                <td>${inputs[2].value}</td>
                 <td>
                     <button class="edit-btn">Editar</button>
                     <button class="delete-btn">Excluir</button>

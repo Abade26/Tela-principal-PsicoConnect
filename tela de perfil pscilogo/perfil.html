@@ -23,23 +23,48 @@
         <h2>Horários de Consulta</h2>
         <ul id="consultation-list">
         </ul>
+        <button id="add-consultation-btn">Adicionar Horário</button>
     </section>
 
     <section id="user-profiles">
         <h2>Perfil dos Usuários</h2>
         <div class="user-card">
-            <img src="user1.jpg" alt="Foto do Usuário">
-            <h3>Nome do Usuário</h3>
-            <p>Informações adicionais</p>
+            <img src="grazi.jpg" alt="Foto do Usuário">
+            <h3>Grazi</h3>
+            <p>Estou no aguardo!</p>
         </div>
+        <div class="user-card">
+            <img src="ex de abade.jpg" alt="Foto do Usuário">
+            <h3>Luiza Abade</h3>
+            <p>Estou no aguardo!</p>
+        </div>
+        <div class="user-card">
+            <img src="brunete.jpg" alt="Foto do Usuário">
+            <h3>Brunete</h3>
+            <p>Estou no aguardo!</p>
+        </div>
+        <div class="user-card">
+            <img src="igor.jpg" alt="Foto do Usuário">
+            <h3>Igorkun</h3>
+            <p>Estou no aguardo!</p>
+        </div>
+
+    </div>
+    <div class="user-card">
+        <img src="junior.png" alt="Foto do Usuário">
+        <h3>Junior Inácio</h3>
+        <p>Estou no aguardo!</p>
+    </div>
+        
     </section>
 
     <section id="patient-scores">
-        <h2>Pontuações dos Pacientes</h2>
+        <h2>Avaliações dos Pacientes</h2>
         <div class="search-bar">
             <input type="text" id="search-input" placeholder="Pesquisar no Pontuário">
             <button id="search-btn">Pesquisar</button>
         </div>
+        <button id="add-patient-btn">Adicionar Paciente</button>
         <table>
             <thead>
                 <tr>
@@ -49,11 +74,19 @@
                 </tr>
             </thead>
             <tbody id="patient-list">
+                <!-- Exemplo de uma linha de paciente -->
+                <tr>
+                    <td>Paciente Exemplo</td>
+                    <td>85</td>
+                    <td>
+                        <button class="edit-btn">Editar</button>
+                        <button class="delete-btn">Excluir</button>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </section>
 
-   
     <input type="file" id="file-input" style="display: none;">
     
     <script src="js/script.js"></script>
