@@ -63,7 +63,7 @@ header {
 }
 
 #nav_logo {
-    font-size: 14px;
+    font-size: 20px;
     color: #265073;
 }
 
@@ -362,9 +362,6 @@ div.btn-conteiner {
 }
 
 #bg-dark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     width: 100%;
     height: 290vh;
@@ -556,5 +553,7 @@ footer {
     list-style: none;
     color: white;
 }
-
+.chat-btn{
+    text-decoration: none;
+}
 

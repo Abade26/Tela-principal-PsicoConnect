@@ -66,7 +66,10 @@ for (let i = 0; i <= cards.length-1; i++){
 
             <div class="psycho-price">
                 <h4>${price.innerText}</h4>
-                <button class="btn-default" onclick="modalOut()">
+                <a href="http://127.0.0.1:5500/HTML/Chat/index.html" class = "chat-btn"><button class="btn-default" onclick="">
+                    Chat
+                </button></a>  
+                 <button class="btn-default" onclick="modalOut()">
                     Cancelar
                 </button>   
             </div>
