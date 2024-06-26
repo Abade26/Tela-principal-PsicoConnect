@@ -32,6 +32,12 @@ let cards = document.querySelectorAll('.card')
 for (let i = 0; i <= cards.length-1; i++){
     let button = document.querySelectorAll('.card .btn-default')[i]
     button.addEventListener('click', () =>{
+        document.body.style.overflow = 'hidden';  // Desabilita o scroll
+
+        modal.style.top = `${window.scrollY + window.innerHeight / 5}px`;
+        
+        bgDark.style.top = `${window.scrollY + window.innerHeight / 20000}px`;
+
         bgDark.style.visibility = 'visible'
         modal.style.visibility = 'visible'
 
@@ -68,9 +74,12 @@ for (let i = 0; i <= cards.length-1; i++){
     })
 }
 /* */
+bgDark.addEventListener('click', modalOut);
+
 function modalOut(){
     modal.style.visibility = 'hidden'
     bgDark.style.visibility = 'hidden'
+    document.body.style.overflow = 'auto';
     
 }
 
