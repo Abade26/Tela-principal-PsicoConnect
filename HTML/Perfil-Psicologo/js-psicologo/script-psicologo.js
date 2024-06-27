@@ -1,4 +1,3 @@
-// Mudar Foto de Perfil
 const changePictureBtn = document.getElementById('change-picture-btn');
 const editPictureBtn = document.getElementById('edit-picture-btn');
 const fileInput = document.getElementById('file-input');
@@ -23,7 +22,7 @@ fileInput.addEventListener('change', function() {
     }
 });
 
-// Barra de Pesquisa para Pontuações dos Pacientes
+
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
 const patientList = document.getElementById('patient-list');
@@ -42,7 +41,7 @@ searchBtn.addEventListener('click', function() {
     });
 });
 
-// CRUD de Pontuações dos Pacientes
+
 const addPatientBtn = document.getElementById('add-patient-btn');
 
 addPatientBtn.addEventListener('click', function() {
@@ -113,10 +112,10 @@ function addEditAndDeleteEvents(row) {
     });
 }
 
-// Adiciona eventos de edição e exclusão para as linhas existentes
+
 document.querySelectorAll('#patient-list tr').forEach(addEditAndDeleteEvents);
 
-// CRUD de Horários de Consulta
+
 const addConsultationBtn = document.getElementById('add-consultation-btn');
 const consultationList = document.getElementById('consultation-list');
 
@@ -173,5 +172,4 @@ function addEditAndDeleteConsultationEvents(item) {
     });
 }
 
-// Adicionar eventos de edição e exclusão para os horários de consulta existentes
 document.querySelectorAll('#consultation-list li').forEach(addEditAndDeleteConsultationEvents);
